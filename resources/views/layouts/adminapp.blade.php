@@ -89,14 +89,35 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('wisudawan.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-graduation-cap"></i>
-                                <p class="">
-                                    &nbsp;Wisudawan
-                                </p>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-graduation-cap"></i>
+                              <p>
+                                Wisudawan
+                                <i class="right fas fa-angle-left"></i>
+                              </p>
                             </a>
-                        </li>
+                            <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
+                                  <i class="fas fa-clipboard-list nav-icon"></i>
+                                  <p>Belum Membayar</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
+                                  <i class="fas fa-clipboard-list nav-icon"></i>
+                                  <p>Menunggu Verif</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
+                                  <i class="fas fa-clipboard-list nav-icon"></i>
+                                  <p>Sudah Membayar</p>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                               <i class="nav-icon fas fa-users"></i>

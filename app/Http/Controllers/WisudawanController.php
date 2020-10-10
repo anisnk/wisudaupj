@@ -15,7 +15,7 @@ class WisudawanController extends Controller
     public function index()
     {
         $data_wisudawan = Wisudawan::all();
-        return view('wisudawan.index', compact('data_wisudawan'));
+        return view('wisudawan_satu.index', compact('data_wisudawan'));
     }
 
     /**

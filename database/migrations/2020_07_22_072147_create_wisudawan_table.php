@@ -18,7 +18,6 @@ class CreateWisudawanTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('prodi_id');
             $table->string('nama');
-            $table->string('nama_akte');
             $table->string('tempat_lahir');
             $table->date('tgl_lahir');
             $table->string('alamat');

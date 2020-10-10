@@ -111,8 +111,7 @@ class DatadiriController extends Controller
     public function update(Request $request, $id)
     {
         $data = request()->validate([
-            'nama_depan' => 'required',
-            'nama_belakang' => 'required',
+            'nama' => 'required',
             'nim' => 'digits:10',
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'date',

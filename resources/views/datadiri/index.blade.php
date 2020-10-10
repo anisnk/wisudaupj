@@ -16,9 +16,6 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h3>Data Diri Wisudawan</h3>
-                </div>
                 <div class="card-body">
 
                     @if ($wisudawan == NULL)
@@ -28,80 +25,109 @@
                     </a>
                     @else
                     <div class="table-responsive">
-                        <table class="table table-borderless">
+                        <h4>Data Wisudawan</h4>
+                        <table class="table table-sm">
                             <tbody>
-                                <tr>
-                                    <th scope="row">Nama</th>
-                                    <td>: {{ $wisudawan->nama }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">NIM</th>
+                                    <td class="col-8">: {{ $wisudawan->nim }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">NIM</th>
-                                    <td>: {{ $wisudawan->nim }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Nama</th>
+                                    <td class="col-8">: {{ $wisudawan->nama }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Fakultas</th>
-                                    <td>: {{ $wisudawan->prodi->fakultas->nama_fakultas}}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Program Studi</th>
+                                    <td class="col-8">: {{ $wisudawan->prodi->nama_prodi}}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Prodi</th>
-                                    <td>: {{ $wisudawan->prodi->nama_prodi}}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Fakultas</th>
+                                    <td class="col-8">: {{ $wisudawan->prodi->fakultas->nama_fakultas}}</td>
                                 </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">Tempat Lahir</th>
+                                    <td class="col-8">: {{ $wisudawan->tempat_lahir }}</td>
+                                </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">Tanggal Lahir</th>
+                                    <td class="col-8">: {{ $wisudawan->tgl_lahir }}</td>
+                                </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">Agama</th>
+                                    <td class="col-8">: {{ $wisudawan->agama }}</td>
+                                </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">Alamat</th>
+                                    <td class="col-8">: {{ $wisudawan->alamat }}</td>
+                                </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">No Handphone</th>
+                                    <td class="col-8">: {{ $wisudawan->no_telp }}</td>
+                                </tr>
+                                <tr class="d-flex">
+                                    <th class="col-4">e-mail</th>
+                                    <td class="col-8">: {{ $wisudawan->user->email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                                <tr>
-                                    <th scope="row">Email</th>
-                                    <td>: {{ $wisudawan->user->email }}</td>
+                    </div>
+                    <div class="table-responsive">
+                        <h4>Data Orangtua</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-4">Nama Ayah</th>
+                                    <td class="col-8">: {{ $wisudawan->nama_ayah }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Tempat Lahir</th>
-                                    <td>: {{ $wisudawan->tempat_lahir }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Nama Ibu</th>
+                                    <td class="col-8">: {{ $wisudawan->nama_ibu }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Tanggal Lahir</th>
-                                    <td>: {{ $wisudawan->tgl_lahir }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">No Handphone Orang Tua</th>
+                                    <td class="col-8">: {{ $wisudawan->no_telp_ortu }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Alamat</th>
-                                    <td>: {{ $wisudawan->alamat }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Alamat Orang Tua</th>
+                                    <td class="col-8">: {{ $wisudawan->alamat_ortu }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Agama</th>
-                                    <td>: {{ $wisudawan->agama }}</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <h4>Informasi Skripsi</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-4">Judul TA</th>
+                                    <td class="col-8">: {{ $wisudawan->judul_ta }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">No Handphone</th>
-                                    <td>: {{ $wisudawan->no_telp }}</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <h4>Data Prestasi Akademik</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-4">IPK</th>
+                                    <td class="col-8">: {{ $wisudawan->ipk }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">IPK</th>
-                                    <td>: {{ $wisudawan->ipk }}</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <h4>Data Kelulusan</h4>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-4">Tahun Masuk</th>
+                                    <td class="col-8">: {{ $wisudawan->th_masuk }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">Judul TA</th>
-                                    <td>: {{ $wisudawan->judul_ta }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Tahun Masuk</th>
-                                    <td>: {{ $wisudawan->th_masuk }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Tahun Keluar</th>
-                                    <td>: {{ $wisudawan->th_keluar }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nama Ayah</th>
-                                    <td>: {{ $wisudawan->nama_ayah }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nama Ibu</th>
-                                    <td>: {{ $wisudawan->nama_ibu }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">No Handphone Orang Tua</th>
-                                    <td>: {{ $wisudawan->no_telp_ortu }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Alamat Orang Tua</th>
-                                    <td>: {{ $wisudawan->alamat_ortu }}</td>
+                                <tr class="d-flex">
+                                    <th class="col-4">Tahun Keluar</th>
+                                    <td class="col-8">: {{ $wisudawan->th_keluar }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -116,5 +142,4 @@
         </div>
     </div>
 </div>
-
 @endsection

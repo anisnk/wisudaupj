@@ -27,7 +27,6 @@
                             <p>Pembayaran Anda Belum Di Verifikasi</p>
                         @else
                             {!! QrCode::size(100)->generate('Cek 1 2 3'); !!}
-                            <p>Tes Barcode</p>
                         @endif
                     @endif
                 </div>

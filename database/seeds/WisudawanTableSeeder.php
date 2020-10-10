@@ -18,7 +18,6 @@ class WisudawanTableSeeder extends Seeder
             'user_id'=>'2',
             'prodi_id'=>'8',
             'nama'=>'Anis Naufal Karmayuda',
-            'nama_akte'=>'Anis Naufal',
             'nim'=>'2017071020',
             'tempat_lahir'=>'Canada',
             'tgl_lahir'=>'1999-10-31',

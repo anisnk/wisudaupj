@@ -11,34 +11,19 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('datadiri.update', $user->mahasiswa->id) }}">
+                    <form method="POST" action="{{ route('datadiri.update', $user->wisudawan->id) }}">
                         @csrf
                         @method('PATCH')
 
                         <div class="form-group row">
-                            <label for="nama_depan" class="col-md-4 col-form-label">Nama Depan</label>
+                            <label for="nama" class="col-md-4 col-form-label">Nama Lengkap</label>
 
-                            <input id="nama_depan" type="text"
-                                class="form-control{{ $errors->has('nama_depan') ? ' is-invalid' : '' }}"
-                                name="nama_depan" value="{{ old('nama_depan') ?? $user->mahasiswa->nama_depan }}"
-                                autocomplete="nama_depan" autofocus>
+                            <input id="nama" type="text"
+                                class="form-control{{ $errors->has('nama') ? ' is-invalid' : '' }}"
+                                name="nama" value="{{ old('nama') ?? $user->wisudawan->nama }}"
+                                autocomplete="nama" autofocus>
 
-                            @if ($errors->has('nama_depan'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>Kolom Harus Diisi</strong>
-                            </span>
-                            @endif
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="nama_belakang" class="col-md-4 col-form-label">Nama Belakang</label>
-
-                            <input id="nama_belakang" type="text"
-                                class="form-control{{ $errors->has('nama_belakang') ? ' is-invalid' : '' }}"
-                                name="nama_belakang" value="{{ old('nama_belakang') ?? $user->mahasiswa->nama_belakang }}"
-                                autocomplete="nama_belakang" autofocus>
-
-                            @if ($errors->has('nama_belakang'))
+                            @if ($errors->has('nama'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>Kolom Harus Diisi</strong>
                             </span>
@@ -50,7 +35,7 @@
 
                             <input id="nim" type="text"
                                 class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}"
-                                name="nim" value="{{ old('nim') ?? $user->mahasiswa->nim }}"
+                                name="nim" value="{{ old('nim') ?? $user->wisudawan->nim }}"
                                 autocomplete="nim" autofocus>
 
                             @if ($errors->has('nim'))
@@ -65,7 +50,7 @@
 
                             <input id="tempat_lahir" type="text"
                                 class="form-control{{ $errors->has('tempat_lahir') ? ' is-invalid' : '' }}"
-                                name="tempat_lahir" value="{{ old('tempat_lahir') ?? $user->mahasiswa->tempat_lahir }}"
+                                name="tempat_lahir" value="{{ old('tempat_lahir') ?? $user->wisudawan->tempat_lahir }}"
                                 autocomplete="tempat_lahir" autofocus>
 
                             @if ($errors->has('tempat_lahir'))
@@ -80,7 +65,7 @@
 
                             <input id="tgl_lahir" type="text"
                                 class="form-control{{ $errors->has('tgl_lahir') ? ' is-invalid' : '' }}"
-                                name="tgl_lahir" value="{{ old('tgl_lahir') ?? $user->mahasiswa->tgl_lahir }}"
+                                name="tgl_lahir" value="{{ old('tgl_lahir') ?? $user->wisudawan->tgl_lahir }}"
                                 autocomplete="tgl_lahir" autofocus>
 
                             @if ($errors->has('tgl_lahir'))
@@ -95,7 +80,7 @@
 
                             <input id="alamat" type="text"
                                 class="form-control{{ $errors->has('alamat') ? ' is-invalid' : '' }}"
-                                name="alamat" value="{{ old('alamat') ?? $user->mahasiswa->alamat }}"
+                                name="alamat" value="{{ old('alamat') ?? $user->wisudawan->alamat }}"
                                 autocomplete="alamat" autofocus>
 
                             @if ($errors->has('alamat'))
@@ -110,7 +95,7 @@
 
                             <input id="agama" type="text"
                                 class="form-control{{ $errors->has('agama') ? ' is-invalid' : '' }}"
-                                name="agama" value="{{ old('agama') ?? $user->mahasiswa->agama }}"
+                                name="agama" value="{{ old('agama') ?? $user->wisudawan->agama }}"
                                 autocomplete="agama" autofocus>
 
                             @if ($errors->has('agama'))
@@ -125,7 +110,7 @@
 
                             <input id="no_telp" type="text"
                                 class="form-control{{ $errors->has('no_telp') ? ' is-invalid' : '' }}"
-                                name="no_telp" value="{{ old('no_telp') ?? $user->mahasiswa->no_telp }}"
+                                name="no_telp" value="{{ old('no_telp') ?? $user->wisudawan->no_telp }}"
                                 autocomplete="no_telp" autofocus>
 
                             @if ($errors->has('no_telp'))
@@ -140,7 +125,7 @@
 
                             <input id="ipk" type="text"
                                 class="form-control{{ $errors->has('ipk') ? ' is-invalid' : '' }}"
-                                name="ipk" value="{{ old('ipk') ?? $user->mahasiswa->ipk }}"
+                                name="ipk" value="{{ old('ipk') ?? $user->wisudawan->ipk }}"
                                 autocomplete="ipk" autofocus>
 
                             @if ($errors->has('ipk'))
@@ -155,7 +140,7 @@
 
                             <input id="judul_ta" type="text"
                                 class="form-control{{ $errors->has('judul_ta') ? ' is-invalid' : '' }}"
-                                name="judul_ta" value="{{ old('judul_ta') ?? $user->mahasiswa->judul_ta }}"
+                                name="judul_ta" value="{{ old('judul_ta') ?? $user->wisudawan->judul_ta }}"
                                 autocomplete="judul_ta" autofocus>
 
                             @if ($errors->has('judul_ta'))
@@ -170,7 +155,7 @@
 
                             <input id="th_masuk" type="text"
                                 class="form-control{{ $errors->has('th_masuk') ? ' is-invalid' : '' }}"
-                                name="th_masuk" value="{{ old('th_masuk') ?? $user->mahasiswa->th_masuk }}"
+                                name="th_masuk" value="{{ old('th_masuk') ?? $user->wisudawan->th_masuk }}"
                                 autocomplete="th_masuk" autofocus>
 
                             @if ($errors->has('th_masuk'))
@@ -185,7 +170,7 @@
 
                             <input id="th_keluar" type="text"
                                 class="form-control{{ $errors->has('th_keluar') ? ' is-invalid' : '' }}"
-                                name="th_keluar" value="{{ old('th_keluar') ?? $user->mahasiswa->th_keluar }}"
+                                name="th_keluar" value="{{ old('th_keluar') ?? $user->wisudawan->th_keluar }}"
                                 autocomplete="th_keluar" autofocus>
 
                             @if ($errors->has('th_keluar'))
@@ -200,7 +185,7 @@
 
                             <input id="nama_ayah" type="text"
                                 class="form-control{{ $errors->has('nama_ayah') ? ' is-invalid' : '' }}"
-                                name="nama_ayah" value="{{ old('nama_ayah') ?? $user->mahasiswa->nama_ayah }}"
+                                name="nama_ayah" value="{{ old('nama_ayah') ?? $user->wisudawan->nama_ayah }}"
                                 autocomplete="nama_ayah" autofocus>
 
                             @if ($errors->has('nama_ayah'))
@@ -215,7 +200,7 @@
 
                             <input id="nama_ibu" type="text"
                                 class="form-control{{ $errors->has('nama_ibu') ? ' is-invalid' : '' }}"
-                                name="nama_ibu" value="{{ old('nama_ibu') ?? $user->mahasiswa->nama_ibu }}"
+                                name="nama_ibu" value="{{ old('nama_ibu') ?? $user->wisudawan->nama_ibu }}"
                                 autocomplete="nama_ibu" autofocus>
 
                             @if ($errors->has('nama_ibu'))
@@ -230,7 +215,7 @@
 
                             <input id="no_telp_ortu" type="text"
                                 class="form-control{{ $errors->has('no_telp_ortu') ? ' is-invalid' : '' }}"
-                                name="no_telp_ortu" value="{{ old('no_telp_ortu') ?? $user->mahasiswa->no_telp_ortu }}"
+                                name="no_telp_ortu" value="{{ old('no_telp_ortu') ?? $user->wisudawan->no_telp_ortu }}"
                                 autocomplete="no_telp_ortu" autofocus>
 
                             @if ($errors->has('no_telp_ortu'))
@@ -245,7 +230,7 @@
 
                             <input id="alamat_ortu" type="text"
                                 class="form-control{{ $errors->has('alamat_ortu') ? ' is-invalid' : '' }}"
-                                name="alamat_ortu" value="{{ old('alamat_ortu') ?? $user->mahasiswa->alamat_ortu }}"
+                                name="alamat_ortu" value="{{ old('alamat_ortu') ?? $user->wisudawan->alamat_ortu }}"
                                 autocomplete="alamat_ortu" autofocus>
 
                             @if ($errors->has('alamat_ortu'))
