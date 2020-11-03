@@ -1,4 +1,4 @@
-@extends('layouts.userapp')
+@extends('layouts.adminapp')
 
 @section('content')
 <!-- Content Header (Page header) -->
@@ -17,13 +17,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
-                    @if ($wisudawan == NULL)
-                    <p>Data belum terisi</p>
-                    <a href="{{ route('datadiri.create') }}">
-                        <button type="button" class="btn btn-info">Input Data</button>
-                    </a>
-                    @else
                     <div class="table-responsive">
                         <h4>Data Wisudawan</h4>
                         <table class="table table-sm">
@@ -131,12 +124,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <a href="{{ route('datadiri.edit', $wisudawan->id) }}">
-                            <button type="button" class="btn btn-info">Edit Data</button>
+                        <a class="btn btn-info btn-sm" href="{{ route('wisudawan.index') }}">
+                            <i class="fas fa-arrow-left">
+                            </i>
+                            Return
                         </a>
                     </div>
-                    @endif
-
                 </div>
             </div>
         </div>

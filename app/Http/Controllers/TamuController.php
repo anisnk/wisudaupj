@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TamuUndangan;
 use App\Mail\GuestMail;
+use App\Mail\QrMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,6 +30,7 @@ class TamuController extends Controller
         $tamuUndangan = TamuUndangan::all();
 
         return view('tamu.create', compact('tamuUndangan'));
+
     }
 
     /**
@@ -49,6 +51,7 @@ class TamuController extends Controller
         ]);
 
         $tamuUndangan = TamuUndangan::create($data);
+        Mail::to($tamuUndangan->email)->send(new QrMail($tamuUndangan));
         return redirect(route('tamu.index'));
     }
 

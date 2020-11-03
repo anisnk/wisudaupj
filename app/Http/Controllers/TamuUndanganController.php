@@ -58,9 +58,9 @@ class TamuUndanganController extends Controller
      * @param  \App\TamuUndangan  $tamuUndangan
      * @return \Illuminate\Http\Response
      */
-    public function edit(TamuUndangan $tamuUndangan)
+    public function edit( $id)
     {
-        //
+        return view('tamuUndangan.edit', ['tamuUndangan' => TamuUndangan::findOrFail($id)]);
     }
 
     /**
@@ -70,9 +70,16 @@ class TamuUndanganController extends Controller
      * @param  \App\TamuUndangan  $tamuUndangan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TamuUndangan $tamuUndangan)
+    public function update(Request $request, $id)
     {
-        //
+        $data = request()->validate([
+            'kehadiran' => '',
+        ]);
+
+        $tamuUndangan = TamuUndangan::where('id', $id)->first();
+        $tamuUndangan->update($data);
+
+        return redirect(route('tamuUndangan.index'));
     }
 
     /**

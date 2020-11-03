@@ -73,14 +73,14 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('dashboard.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-chalkboard"></i>
                                 <p>
                                     &nbsp;Dashboard
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('admin.users.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
@@ -89,52 +89,22 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item">
+                            <a href="{{ route('wisudawan.index') }}" class="nav-link">
                               <i class="nav-icon fas fa-graduation-cap"></i>
                               <p>
-                                Wisudawan
-                                <i class="right fas fa-angle-left"></i>
+                                Data Wisudawan
                               </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
-                                  <i class="fas fa-clipboard-list nav-icon"></i>
-                                  <p>Belum Membayar</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
-                                  <i class="fas fa-clipboard-list nav-icon"></i>
-                                  <p>Menunggu Verif</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="{{ route('wisudawan.index') }}" class="nav-link">
-                                  <i class="fas fa-clipboard-list nav-icon"></i>
-                                  <p>Sudah Membayar</p>
-                                </a>
-                              </li>
-                            </ul>
                           </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('tamuUndangan.index') }}" class="nav-link">
                               <i class="nav-icon fas fa-users"></i>
                               <p>
-                                Tamu Undangan
-                                <i class="right fas fa-angle-left"></i>
+                                Data Tamu Undangan
                               </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                <a href="{{ route('tamuUndangan.index') }}" class="nav-link">
-                                  <i class="fas fa-clipboard-list nav-icon"></i>
-                                  <p>List Tamu</p>
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
+                        </li>
                     </ul>
 
                 </nav>

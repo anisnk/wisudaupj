@@ -32,6 +32,7 @@ class CreateWisudawanTable extends Migration
             $table->string('nama_ibu');
             $table->string('no_telp_ortu');
             $table->string('alamat_ortu');
+            $table->string('kehadiran')->nullable()->default(null);
             $table->timestamps();
 
             $table->index('user_id');

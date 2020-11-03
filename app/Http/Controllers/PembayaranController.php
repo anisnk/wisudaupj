@@ -50,7 +50,16 @@ class PembayaranController extends Controller
             'verifikasi' => ' ',
         ]);
 
-        $pembayaran = Pembayaran::create($data);
+        $imagePath = request('image')->store('uploads', 'public');
+
+        $pembayaran = Pembayaran::create([
+            'nama_bank' => $data['nama_bank'],
+            'no_rek' => $data['no_rek'],
+            'atas_nama' => $data['atas_nama'],
+            'image' => $imagePath,
+            'user_id' => $data['user_id'],
+            'verifikasi' => $data['verifikasi'],
+        ]);
 
         return redirect(route('pembayaran.index'));
     }

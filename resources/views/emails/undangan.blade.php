@@ -1,7 +1,12 @@
-@component('mail::message')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Undangan</title>
+</head>
+<body>
+    <h1>Undangan</h1>
+    <p>{!! QrCode::size(100)->generate(route('tamuUndangan.edit', $tamuUndangan->id)); !!}</p>
 
-
-The body of your message.
-
-Thanks,<br>
-@endcomponent
+    <p>Thank you</p>
+</body>
+</html>

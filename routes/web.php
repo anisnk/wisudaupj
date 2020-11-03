@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\GuestMail;
+use App\Mail\QrMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,7 @@ Route::get('/', function () {
 });
 
 Route::get('/email', function () {
-    return new GuestMail();
+    return new QrMail();
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

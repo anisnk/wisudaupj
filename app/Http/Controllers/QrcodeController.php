@@ -17,6 +17,7 @@ class QrcodeController extends Controller
         $user = Auth()->user();
         $qrcode = Qrcode::where('user_id', $user->id)->first();
 
+
         return view('qrcode.index', compact('qrcode', 'user'));
     }
 

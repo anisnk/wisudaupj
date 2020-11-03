@@ -20,6 +20,7 @@ class CreateTamuUndanganTable extends Migration
             $table->string('jabatan');
             $table->string('no_telp');
             $table->string('email');
+            $table->string('kehadiran')->nullable()->default(null);
             $table->timestamps();
         });
     }

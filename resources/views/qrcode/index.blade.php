@@ -26,7 +26,7 @@
                         @if ($user->pembayaran->verifikasi == NULL)
                             <p>Pembayaran Anda Belum Di Verifikasi</p>
                         @else
-                            {!! QrCode::size(100)->generate('Cek 1 2 3'); !!}
+                            {!! QrCode::size(100)->generate(route('wisudawan.edit', $user->wisudawan->id)); !!}
                         @endif
                     @endif
                 </div>

@@ -80,7 +80,7 @@
 
                         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                         <div class="form-group row mb-0">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-info">
                                 Simpan
                             </button>
                         </div>

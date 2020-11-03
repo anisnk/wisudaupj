@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Wisudawan;
+use App\Pembayaran;
 use Illuminate\Http\Request;
 
 class WisudawanController extends Controller
@@ -47,7 +48,7 @@ class WisudawanController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('wisudawan_satu.show', ['wisudawan' => Wisudawan::findOrFail($id)]);
     }
 
     /**
@@ -58,7 +59,7 @@ class WisudawanController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('wisudawan_satu.edit', ['wisudawan' => Wisudawan::findOrFail($id)]);
     }
 
     /**
@@ -70,7 +71,20 @@ class WisudawanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = request()->validate([
+            'verifikasi' => '',
+        ]);
+
+        $wisudawan = Wisudawan::where('user_id', $id)->first();
+        $wisudawan->user->pembayaran->update($data);
+
+        $status = request()->validate([
+            'kehadiran' => '',
+        ]);
+
+        $wisudawan->update($status);
+
+        return redirect(route('wisudawan.index'));
     }
 
     /**

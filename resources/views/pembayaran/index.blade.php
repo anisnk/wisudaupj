@@ -26,7 +26,7 @@
                         @if ($pembayaran == NULL)
                         <p>Sudah Membayar?</p>
                         <a href="{{ route('pembayaran.create') }}">
-                            <button type="button" class="btn btn-primary">Upload Bukti Pembayaran</button>
+                            <button type="button" class="btn btn-info">Upload Bukti Pembayaran</button>
                         </a>
 
                         @else
