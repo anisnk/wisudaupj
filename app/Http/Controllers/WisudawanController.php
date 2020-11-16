@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Wisudawan;
 use App\Pembayaran;
 use Illuminate\Http\Request;
+use App\Exports\WisudawanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class WisudawanController extends Controller
 {
@@ -97,4 +99,10 @@ class WisudawanController extends Controller
     {
         //
     }
+
+    public function exportExcel()
+    {
+        return Excel::download(new WisudawanExport, 'DataWisudawan.xlsx');
+    }
+
 }

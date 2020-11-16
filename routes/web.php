@@ -52,3 +52,5 @@ Route::prefix('admin')->middleware('can:manage-users')->group(function(){
 });
 
 Route::resource('/tamu', 'TamuController' );
+
+Route::get('wisudawan/export-excel', 'WisudawanController@exportExcel');

@@ -87,6 +87,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                <a href="{{ url('wisudawan/export-excel') }}" class="btn btn-sm btn-primary">Download</a>
                 </div>
             </div>
         </div>
